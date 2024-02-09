@@ -20,6 +20,8 @@ The Enterprise Network Lab project aimed to create a simulated real-world enterp
 - Group Policy for implementing and managing security policies.
 
 ## Steps
+![networklab](https://github.com/Rootcipher8112/-Enterprise-Network-Lab/assets/123340212/9b88d82e-d114-4715-917b-cab2123d57a9)
+
 For this lab I used my virtualization method of choice which is Virtual Box. I like the ease of use and the customization settings for each virtual machine. The first step was to download the ISO files for each of the machines I would need Windows Server 2019, Ubuntu 22.04, and Windows 10. These can be found through simple google search. One thing to now is to use the official sites for each of these to ensure the files are not corrupted.
 
 After creating/spinning up each machine and going through the installation process my next step was to create the domain and set up the Windows Server 2019 box as the domain controller. In the configuration I gave this machine 2 NICs (network interface card). One was configured for NAT to acces the internet and the other set to internal network (I will discuss more on this later).
