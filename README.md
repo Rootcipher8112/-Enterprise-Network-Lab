@@ -71,7 +71,7 @@ In this step I selected the NAT NIC to be used as the public facing connection f
 
 DHCP (dynamic host configuration protocol) is used with networks to assign each device with an IP address in order to communicate with other computers or devices on a local network or the internet. 
 
-Instead of the use trying to choose their own IP address most hosts are configured to do this automatically through the use of a DHCP server or can be set up manually in some cases such as a printer where you would want it to be static. 
+Instead of the user trying to choose their own IP address most hosts are configured to do this automatically through the use of a DHCP server or can be set up manually in some cases such as a printer where you would want it to be static. 
 
 The server leases out an IP address for a predetermined amount of time and can either renew the lease or assign a new IP address when the lease is up. 
 
