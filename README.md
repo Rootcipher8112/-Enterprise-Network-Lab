@@ -1,4 +1,4 @@
-# -Enterprise-Network-Lab
+# Enterprise-Network-Lab
 
 ### Objective
 
