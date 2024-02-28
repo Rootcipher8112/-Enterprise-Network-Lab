@@ -261,20 +261,33 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
       - You will be prompted to enter the Administrator password, then press enter.
       - Verify the connection using the following command:
             
-            id jrowe@rootdomain.com
+            realm list
 
+      - We can also verify user connection using the following command:
+
+    	    id jrowe@ROOTDOMAIN.COM
+   
    9. Lastly we edit the common-session file to automatically create a home folder for the new user.
       - To edit the file we will run the following command:
             
             sudo nano /etc/pam.d/common-session
 
-      - Next we will navigate to the line that reads "session optional" and insert the following:
-            
-            pam_mkhomedir.so skel=/etc/skel umask=077
-      
-      - Save the file and exit
+       - Next we will navigate to the line that reads "session optional" and insert the following:
 
-### Now we are done and can continue our session as Administrator or log out and login as another one of our users.
+             pam_mkhomedir.so skel=/etc/skel umask=077
+      
+       - Save the file and exit
+    
+### Now we can log in as a user on the domain.
+  - Log out of the current session
+  - At login screen select "other user"
+  - Enter "[username]@DOMAIN.COM" (for this lab jrowe@rootdomain.com)
+      
+###   Success!!!
+
+
+**Back over on our DC we can go to our Active Directory users and computers to verify the connection on this end.**
+
 
 ##
 ### Let's recap what we have set up so far:
@@ -285,7 +298,7 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
   - Windows 10 client configured and joined to the domain
   - Ubuntu 22.04 client configured and joined to the domain
 
-Next we will begin to dive into managing group policies for our different Orginizational Units.
+**Next we will begin to dive into managing group policies for our different Orginizational Units.**
 
 ##
 ### Group Policy Implementation
