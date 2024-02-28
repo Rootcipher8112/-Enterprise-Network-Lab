@@ -179,7 +179,8 @@ To connect our Windows 10 client machine to the domain we will take the followin
        - Ensure that the DNS settings on the Windows 10 machine point to the IP address of the Windows Server 2019 domain controller. (You can set the DNS server in the network adapter settings.)
 
    3. Change Computer Name:
-       - Right-click on the "This PC" icon on the desktop or in File Explorer.
+       - Under start go to settings.
+       - Go into system, then down to "Rename PC (Advanced).
        - Select "Properties" and click on "Change settings" under the "Computer name, domain, and workgroup settings" section.
        - Click the "Change" button.
        - Enter a computer name and ensure that the "Domain" option is selected. Enter the domain name (for our lab it is rootdomain.com).
@@ -189,10 +190,10 @@ To connect our Windows 10 client machine to the domain we will take the followin
        - You'll be prompted to restart the computer. Go ahead and restart it.
 
    5. Log in with Domain Credentials:
-       - After the restart, log in to the Windows 10 machine using domain credentials. Make sure to select the domain in the username field (for this example ROOTDOMAIN/jay).
-
+       - After the restart, log in to the Windows 10 machine using domain credentials. Make sure to select "other user"
    6. Verify Domain Join:
-       - Right-click on "This PC," select "Properties," and verify that the system shows it is joined to the domain under the "Computer name, domain, and workgroup settings" section.
+       - Hover over the network icon in the bottom right corner.
+       - Or open command prompt and type whoami
 
 
 ## Ubuntu 22.04 Client Configuration
@@ -250,17 +251,17 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
    7. Check to see if the domain is visible to the Ubuntu machine:
       - Run the following command to attempt a connection to the domain:
             
-            realm discover rootdomain.com
+            realm discover ROOTDOMAIN.COM
 
    8. Join the domain
-      - To join the domain we will run the following command:
+      - To join the domain as one of our domain admins we will run the following command:
             
-            realm join rootdomain.com
+            realm join -U jrowe ROOTDOMAIN.COM
 
       - You will be prompted to enter the Administrator password, then press enter.
       - Verify the connection using the following command:
             
-            id client-2@rootdomain.com
+            id jrowe@rootdomain.com
 
    9. Lastly we edit the common-session file to automatically create a home folder for the new user.
       - To edit the file we will run the following command:
