@@ -381,6 +381,8 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
 	- Policy: Restrict access to the server room and sensitive system settings.
 		-Why: To ensure that only admins can access high-security areas and modify critical system settings.
 
+
+
 2. **HR OU:**
 
 	- Policy: Limit access to personnel files and sensitive data.
@@ -390,14 +392,18 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
 	- Policy: Enable screen saver lock with password protection.
 		- Why: To ensure that unattended computers are not accessible, protecting sensitive information.
 
+
+
 3. **Managers OU:**
 
 	- Policy: Enforce session timeout and screen lock policies.
 		- Why: To prevent unauthorized access to managerial information when a manager's workstation is left unattended.
-	- Policy: Grant access to certain management tools and resources.
-		- Why: Managers may need special access that regular employees do not, such as budgetary software or advanced analytics tools.
+	- Policy: Implement Application Control Policies using AppLocker.
+		- Why: To ensure that only approved and necessary applications can be executed by the managers, enhancing the security of the systems by reducing the risk of malware execution and preventing the use of unauthorized software.
 	- Policy: Enable audit logging for sensitive operations.
 		- Why: To track changes and operations performed by managers, ensuring accountability and aiding in forensic investigations if needed.
+
+
 
 4. **Sales OU:**
 
@@ -405,8 +411,10 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
 		- Why: To prevent the installation of unauthorized or non-business-related software, reducing security risks and maintaining system performance.
 	- Policy: Customize desktop settings and install sales-specific applications.
 		- Why: To provide a tailored work environment that enhances productivity and ensures that sales staff have the necessary tools at their disposal.
-	- Policy: Implement internet usage policies.
-		- Why: To prevent access to non-business-related websites and reduce the risk of exposure to malicious content.
+	- Policy: Restrict access to specific Control Panel items.
+		- Why: To prevent unauthorized changes to system settings that could impact security or productivity. By limiting access to certain Control Panel applets, you can ensure that sales personnel have only the necessary tools at their disposal, reducing the risk of accidental system misconfigurations.
+
+
 
 ### Creating GPOs
 
@@ -438,5 +446,62 @@ Connecting an Ubuntu client can be more involved than a Windows client. You can 
 
 	- It's crucial to test the policies to ensure they are applied as expected. Use the gpresult /r command on a client machine to verify the applied policies.
 
-### Examples
+## Examples
 
+### Admins Security Policies
+
+##
+![admin pw policy](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/d9836dbe-1c34-4720-8f62-557a60648946)
+
+
+![admin logout](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/c7147540-811e-492c-92f2-25b81ce4ac70)
+
+
+![admin system](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/719529b3-510f-43f2-b2b2-fb3644af31f4)
+##
+
+### HR Security Policies
+
+##
+![hr data access](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/d9a9c72e-4fb1-4884-82f9-70e2350491bf)
+
+
+
+![hrusb](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/e965a7ac-b2af-47c1-b2fb-3343ed9730cf)
+
+
+![hrscrnsvr](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/c0d71e4c-87bc-48ab-b064-e21102f55be9)
+##
+
+### Managment Security Policies
+
+##
+![managementscrnsvr](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/fa028ce2-117b-41a0-9268-8c78ffc36e8d)
+
+
+![managementappcntrl](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/d5fed453-1ef0-4f7e-bd27-fbeec6333230)
+
+
+![managementobjectaccess](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/c4baccfc-3b47-4056-9fd6-e55a5ef5f586)
+##
+
+### Sales Security Policies
+
+##
+![salessoftware](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/e807916c-4a7c-450f-9da8-1f0d6a0856cc)
+
+
+![salesdesktop](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/70ced8c9-bf84-4a9b-b35d-0bd6595c682e)
+
+
+![salesnosettings](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/0ac604f7-fe97-4602-a218-d4e5179e3fc1)
+##
+
+
+## gpresult /r
+
+![gpresult](https://github.com/Rootcipher8112/Enterprise-Network-Lab/assets/123340212/ea975c03-98a0-4607-9088-c57c99bfbd83)
+
+
+
+### Thank you for checking out my lab. It was an excellent experience putting this together to share my journey with others.
